@@ -11,7 +11,7 @@ substitutions:
   hidden_ssid: "false"
 
   # WAKE WORD CONFIG
-  wake_engine: openwakeword
+  wake_engine: microwakeword
   openwakeword_server_url: ws://tater.local:8501
   nanowakeword_server_url: ws://tater.local:8501
   openwakeword_http_timeout_ms: "3000"
