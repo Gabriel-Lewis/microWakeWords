@@ -49,7 +49,7 @@ dashboard_import:
   import_full_config: true
 
 packages:
-  microWakeWords.RespeakerXVF3800:
+  microVoiceKit.RespeakerXVF3800:
     url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:

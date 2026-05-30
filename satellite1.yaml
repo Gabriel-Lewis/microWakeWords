@@ -240,7 +240,7 @@ external_components:
     refresh: 0s
 
 packages:
-  microWakeWords.Sat1:
+  microVoiceKit.Sat1:
     url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:

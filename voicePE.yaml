@@ -43,7 +43,7 @@ substitutions:
   error_cloud_expired_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/error_cloud_expired.mp3
 
 packages:
-  microWakeWords.VoicePE:
+  microVoiceKit.VoicePE:
     url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:

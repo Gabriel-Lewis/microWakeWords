@@ -1,4 +1,4 @@
-# microWakeWords
+# microVoiceKit
 
 ## 🗣️ Request a New Wake Word
 
