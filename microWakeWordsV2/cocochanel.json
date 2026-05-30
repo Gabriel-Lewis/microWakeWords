@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "cocochanel",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "cocochanel.tflite",
   "trained_languages": [
     "en"

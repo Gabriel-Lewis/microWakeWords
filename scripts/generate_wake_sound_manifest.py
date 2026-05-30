@@ -9,7 +9,7 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = REPO_ROOT / 'wake_sound_manifest.json'
-REPO_OWNER = 'TaterTotterson'
+REPO_OWNER = 'Gabriel-Lewis'
 REPO_NAME = 'microWakeWords'
 REPO_REF = 'main'
 

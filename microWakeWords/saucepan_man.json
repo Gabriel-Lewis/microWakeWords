@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "saucepan_man",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "saucepan_man.tflite",
   "trained_languages": [
     "en"

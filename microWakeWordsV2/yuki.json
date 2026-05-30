@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "yuki",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "yuki.tflite",
   "trained_languages": [
     "en"

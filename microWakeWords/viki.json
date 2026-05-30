@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "viki",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "viki.tflite",
   "trained_languages": [
     "en"

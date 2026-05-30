@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "carson",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "carson.tflite",
   "trained_languages": [
     "en"

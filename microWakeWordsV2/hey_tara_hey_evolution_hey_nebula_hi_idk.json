@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hey_tara_hey_evolution_hey_nebula_hi_idk",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "hey_tara_hey_evolution_hey_nebula_hi_idk.tflite",
   "trained_languages": [
     "en"

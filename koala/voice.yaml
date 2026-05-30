@@ -1,7 +1,7 @@
 external_components:
   - source:
       type: git
-      url: https://github.com/TaterTotterson/microWakeWords
+      url: https://github.com/Gabriel-Lewis/microWakeWords
       ref: main
     components:
       - voice_assistant
@@ -84,7 +84,7 @@ remote_wake_word:
   on_wake_word_detected:
     - logger.log:
         level: INFO
-        tag: tater.voice
+        tag: voice
         format: "Remote wake word detected: %s"
         args: [ 'wake_word.c_str()' ]
     - if:
@@ -131,7 +131,7 @@ remote_wake_word:
   on_error:
     - logger.log:
         level: WARN
-        tag: tater.voice
+        tag: voice
         format: "Remote wake word unavailable, temporarily using microWakeWord: %s"
         args: [ 'message.c_str()' ]
     - script.execute: recover_openwakeword_after_fallback

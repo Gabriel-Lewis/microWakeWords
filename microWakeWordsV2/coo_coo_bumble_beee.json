@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "coo_coo_bumble_beee",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "coo_coo_bumble_beee.tflite",
   "trained_languages": [
     "en"

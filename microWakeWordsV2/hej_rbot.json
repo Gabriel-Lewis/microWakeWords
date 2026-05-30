@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hej_rbot",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "hej_rbot.tflite",
   "trained_languages": [
     "en"

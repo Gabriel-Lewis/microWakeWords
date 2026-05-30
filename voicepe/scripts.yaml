@@ -37,7 +37,7 @@ script:
                       }
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Using remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).state == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - remote_wake_word.start:
@@ -94,7 +94,7 @@ script:
                 then:
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Retrying remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).state == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - script.execute: apply_wake_engine
@@ -247,7 +247,7 @@ script:
           effect: "Listening For Command"
 
   # Script executed while the center button is held for push-to-intercom.
-  # Tater orange listening animation so it reads differently from a normal touch.
+  # Primary orange listening animation so it reads differently from a normal touch.
   - id: control_leds_push_to_intercom_phase
     then:
       - light.turn_on:

@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hey_reachy",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "hey_reachy.tflite",
   "trained_languages": [
     "en"

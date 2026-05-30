@@ -1,8 +1,8 @@
 substitutions:
   # DEVICE IDENTITY
   firmware_version: "3.0.3"
-  device_name: tater-respeaker-xvf3800
-  friendly_name: Tater ReSpeaker XVF3800
+  device_name: respeaker-xvf3800
+  friendly_name: ReSpeaker XVF3800
 
   # WIFI / NETWORK
   wifi_ssid: !secret wifi_ssid
@@ -12,12 +12,12 @@ substitutions:
 
   # WAKE WORD CONFIG
   wake_engine: openwakeword
-  openwakeword_server_url: ws://tater.local:8501
-  nanowakeword_server_url: ws://tater.local:8501
+  openwakeword_server_url: ws://wakeword.local:8501
+  nanowakeword_server_url: ws://wakeword.local:8501
   openwakeword_http_timeout_ms: "3000"
   openwakeword_max_failures: "3"
-  wake_word_name: hey_tater
-  wake_word_model_url: https://raw.githubusercontent.com/TaterTotterson/microWakeWords/refs/heads/main/microWakeWords/hey_tater.json
+  wake_word_name: computer
+  wake_word_model_url: https://raw.githubusercontent.com/Gabriel-Lewis/microWakeWords/refs/heads/main/microWakeWords/computer.json
   wake_model_stop_url: https://github.com/kahrendt/microWakeWord/releases/download/stop/stop.json
 
   # WAKE WORD SENSITIVITY
@@ -45,12 +45,12 @@ esphome:
   name_add_mac_suffix: true
 
 dashboard_import:
-  package_import_url: github://TaterTotterson/microWakeWords/respeakerXVF3800-TaterTimer.yaml@main
+  package_import_url: github://Gabriel-Lewis/microWakeWords/respeakerXVF3800.yaml@main
   import_full_config: true
 
 packages:
-  TaterTotterson.RespeakerXVF3800:
-    url: https://github.com/TaterTotterson/microWakeWords
+  microWakeWords.RespeakerXVF3800:
+    url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:
       - respeaker_xvf3800/voice_assistant_phase_ids.yaml

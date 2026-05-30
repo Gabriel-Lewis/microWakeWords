@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "yennefer",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "yennefer.tflite",
   "trained_languages": [
     "en"

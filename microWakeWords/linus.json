@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "linus",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "linus.tflite",
   "trained_languages": [
     "en"

@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "ruther_ford",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "ruther_ford.tflite",
   "trained_languages": [
     "en"

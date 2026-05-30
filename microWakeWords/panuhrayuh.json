@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "panuhrayuh",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "panuhrayuh.tflite",
   "trained_languages": [
     "en"

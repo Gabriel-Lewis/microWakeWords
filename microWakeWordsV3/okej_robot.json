@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "okej_robot",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "okej_robot.tflite",
   "trained_languages": [
     "en"

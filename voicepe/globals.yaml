@@ -19,7 +19,7 @@ globals:
     type: int
     restore_value: no
     initial_value: '10'
-  # True after Tater's server-side openWakeWord detector has fired for this turn.
+  # True after the remote wake detector has fired for this turn.
   - id: openwakeword_wake_detected
     type: bool
     restore_value: no

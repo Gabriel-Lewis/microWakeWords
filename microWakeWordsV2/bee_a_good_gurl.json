@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "bee_a_good_gurl",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "bee_a_good_gurl.tflite",
   "trained_languages": [
     "en"

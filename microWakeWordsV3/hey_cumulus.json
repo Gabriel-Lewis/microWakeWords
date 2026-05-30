@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hey_cumulus",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "hey_cumulus.tflite",
   "trained_languages": [
     "en"

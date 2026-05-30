@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hey_sarah",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-Nvidia-Docker.git",
   "model": "hey_sarah.tflite",
   "trained_languages": [
     "en"

@@ -19,12 +19,12 @@ globals:
     type: int
     restore_value: no
     initial_value: ${voice_assist_not_ready_phase_id}
-  # True after Tater's server-side wake detector has fired for this turn.
+  # True after the remote wake detector has fired for this turn.
   - id: openwakeword_wake_detected
     type: bool
     restore_value: no
     initial_value: 'false'
-  # True while the user button is held for Tater push-to-intercom.
+  # True while the user button is held for push-to-intercom.
   - id: push_to_intercom_active
     type: bool
     restore_value: no

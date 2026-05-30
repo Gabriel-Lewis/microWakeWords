@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "isaac",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "isaac.tflite",
   "trained_languages": [
     "en"

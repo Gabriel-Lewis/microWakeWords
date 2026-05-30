@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "mom",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "mom.tflite",
   "trained_languages": [
     "en"

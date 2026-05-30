@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "ye_si_hua_sheng",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "ye_si_hua_sheng.tflite",
   "trained_languages": [
     "en"

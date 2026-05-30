@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "alexandra",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "alexandra.tflite",
   "trained_languages": [
     "en"

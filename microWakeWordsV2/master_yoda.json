@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "master_yoda",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "master_yoda.tflite",
   "trained_languages": [
     "en"

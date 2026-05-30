@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "frieren",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "frieren.tflite",
   "trained_languages": [
     "en"

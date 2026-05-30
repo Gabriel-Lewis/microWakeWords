@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "akito",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "akito.tflite",
   "trained_languages": [
     "en"

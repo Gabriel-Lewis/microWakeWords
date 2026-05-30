@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "yo_snoop_dog",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "yo_snoop_dog.tflite",
   "trained_languages": [
     "en"

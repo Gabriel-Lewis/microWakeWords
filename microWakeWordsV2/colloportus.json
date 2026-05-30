@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "colloportus",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "colloportus.tflite",
   "trained_languages": [
     "en"

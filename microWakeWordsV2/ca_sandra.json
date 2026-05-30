@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "ca_sandra",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "ca_sandra.tflite",
   "trained_languages": [
     "en"

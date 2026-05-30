@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "veronica",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "veronica.tflite",
   "trained_languages": [
     "en"
