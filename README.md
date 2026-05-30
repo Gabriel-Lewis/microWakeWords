@@ -1,127 +1,14 @@
 # microVoiceKit
 
-## 🗣️ Request a New Wake Word
+This repository contains ESPHome device configs, custom components, and wake sound assets.
 
-You can request a new microWakeWord model by opening a GitHub issue.
+## ESPHome Configs
 
-### ✅ How to request a word
+The top-level YAML files are the device templates. The custom components live under the device-specific directories.
 
-1. Go to the **Issues** tab  
-2. Click **New issue**
-3. Set the **title** to:
+## Wake Sounds
 
-mww: your wake word here
-
-Examples:
-```
-mww: computer
-mww: jarvis
-mww: hello computer
-```
-That’s it — no labels, no templates, no body text required.
-
----
-
-### 🔄 What happens next
-- The `.tflite` and `.json` files are added to the repository
-- The issue is labeled, commented on, and closed when complete
-
----
-
-### ⚠️ Notes
-
-- **Test your wake word with TTS first.**
-  Make sure your text-to-speech engine pronounces the phrase the way you expect.  
-  You may need to spell it *phonetically* or a little “funny” so TTS says it correctly — the trainer uses the same pronunciation.
-- Please request **one wake word per issue**
-- Avoid punctuation or emojis in the title
-- Training runs sequentially if multiple requests are open
-
----
-
-## 🗣️ Set Up Your Custom Wake Word on Home Assistant Voice
-
-⚠️ **Important:** `voicePE.yaml` is for **Voice PE**, `satellite1.yaml` is for **Satellite1**, `respeakerLite.yaml` is for **ReSpeaker Lite**, `koala.yaml` is for **Koala Satellite**, and `respeakerXVF3800.yaml` is for **ReSpeaker XVF3800**, but the same structure and steps apply to *any* Home Assistant voice device.
-You can **mimic these instructions** for your own hardware by updating the equivalent file for your device.
-
-All of the settings below are located **at the very top of the YAML file** inside the `substitutions:` section.  
-You no longer need to hunt for line numbers — everything commonly edited lives in one place.
-
-Open `voicePE.yaml` (or your device’s YAML) and edit the `substitutions:` block.
-
----
-
-### 🧾 Device Name & Friendly Name
-Change how the device appears in ESPHome and Home Assistant:
-```
-device_name: voicepe
-friendly_name: Voice PE
-```
----
-
-### 📡 Wi-Fi & Network Settings
-Set your Wi-Fi credentials (or use secrets) and optionally pin the device to a Home Assistant Voice IP:
-```
-wifi_ssid: !secret wifi_ssid
-wifi_password: !secret wifi_password
-ha_voice_ip: "127.0.0.1"
-```
-If you don’t want a fixed IP, simply remove `ha_voice_ip` and the device will use DHCP.
-
----
-
-### 🎙️ Wake Word Model
-Choose the wake word model and give it a matching ID:
-```
-wake_word_name: computer
-wake_word_model_url: https://raw.githubusercontent.com/Gabriel-Lewis/microWakeWords/refs/heads/main/microWakeWords/computer.json
-```
-The `wake_word_name` **must match** the model ID used internally.
-
----
-
-### 🎚️ Wake Word Sensitivity
-Tune how sensitive the wake word detection is:
-```
-wake_cutoff_slight: "250"     # Slightly sensitive (very strict)
-wake_cutoff_moderate: "245"   # Balanced
-wake_cutoff_very: "222"       # Very sensitive
-```
-Lower numbers = more sensitive  
-Higher numbers = fewer false activations
-
----
-
-### 🔔 Optional – Change the Wake Sound
-You can customize the sound played when the wake word is detected.
-
-Edit the wake sound URL in the substitutions section:
-```
-wake_word_triggered_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/wake_word_triggered.flac
-```
-You can point this to any compatible `.mp3` or `.flac` file hosted online.
-
----
-
-### ✅ Final Notes
-• These values are read throughout the config automatically  
-• No other parts of the YAML need to be edited  
-• Test your wake word in **TTS first** to ensure it’s pronounced correctly  
-  (you may need to spell it creatively for best results)
-
----
-
-## 🤖 Use These Wake Words
-
-If your tooling reads this repository directly, you can still manage firmware substitutions and wake-word model URLs without hand-editing the YAML every time.
-
-### Quick steps
-1. Open your firmware management UI and go to the firmware/template view
-2. Pick your firmware template and connected device  
-3. In the **Micro Wake Word** section, choose any wake word from the built-in list or paste your own custom model URL  
-4. Review the other substitutions and click **Build + Flash**
-
-Any integration that reads its wake-word picker from this repository will pick up newly added wake words automatically.
+Wake sound assets live in `wakeSounds/`, and `wake_sound_manifest.json` tracks the available files.
 
 ---
 
