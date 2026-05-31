@@ -96,8 +96,6 @@ audio_file:
     file: ${mute_switch_off_sound_file}
   - id: timer_finished_sound
     file: ${timer_finished_sound_file}
-  - id: wake_word_triggered_sound
-    file: ${wake_word_triggered_sound_file}
   - id: easter_egg_tick_sound
     file: ${easter_egg_tick_sound_file}
   - id: easter_egg_tada_sound
@@ -168,4 +166,3 @@ media_player:
               id: media_mixing_input
               decibel_reduction: 0
               duration: 1.0s
-
