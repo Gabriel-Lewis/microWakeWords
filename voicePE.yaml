@@ -42,6 +42,10 @@ substitutions:
   easter_egg_tada_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/easter_egg_tada.mp3
   error_cloud_expired_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/error_cloud_expired.mp3
 
+dashboard_import:
+  package_import_url: github://Gabriel-Lewis/microWakeWords/voicePE.yaml@main
+  import_full_config: true
+
 packages:
   microVoiceKit.VoicePE:
     url: https://github.com/Gabriel-Lewis/microWakeWords
