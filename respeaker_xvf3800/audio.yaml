@@ -102,6 +102,8 @@ audio_file:
     file: ${mute_switch_off_sound_file}
   - id: timer_finished_sound
     file: ${timer_finished_sound_file}
+  - id: wake_word_triggered_sound
+    file: ${wake_word_triggered_sound_file}
   - id: error_cloud_expired
     file: ${error_cloud_expired_sound_file}
 
