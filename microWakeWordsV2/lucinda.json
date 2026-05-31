@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "lucinda",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "lucinda.tflite",
   "trained_languages": [
     "en"

@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "meh_la_nia",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "meh_la_nia.tflite",
   "trained_languages": [
     "en"

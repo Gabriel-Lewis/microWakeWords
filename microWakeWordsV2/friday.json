@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "friday",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "friday.tflite",
   "trained_languages": [
     "en"

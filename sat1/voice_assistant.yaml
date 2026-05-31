@@ -4,7 +4,7 @@ globals:
     type: int
     restore_value: no
     initial_value: '10'
-  # True after Tater's server-side openWakeWord detector has fired for this turn.
+  # True after the remote wake detector has fired for this turn.
   - id: openwakeword_wake_detected
     type: bool
     restore_value: no
@@ -13,7 +13,7 @@ globals:
 external_components:
   - source:
       type: git
-      url: https://github.com/TaterTotterson/microWakeWords
+      url: https://github.com/Gabriel-Lewis/microWakeWords
       ref: main
     components:
       - voice_assistant
@@ -49,7 +49,7 @@ micro_wake_word:
   on_wake_word_detected:
     - logger.log:
         level: INFO
-        tag: tater.voice
+        tag: voice
         format: "Wake word detected: %s"
         args: [ 'wake_word.c_str()' ]
     # If the wake word is detected when the device is muted (Possible with the software mute switch): Do nothing
@@ -111,7 +111,7 @@ remote_wake_word:
   on_wake_word_detected:
     - logger.log:
         level: INFO
-        tag: tater.voice
+        tag: voice
         format: "Remote wake word detected: %s"
         args: [ 'wake_word.c_str()' ]
     - if:
@@ -153,7 +153,7 @@ remote_wake_word:
   on_error:
     - logger.log:
         level: WARN
-        tag: tater.voice
+        tag: voice
         format: "Remote wake word unavailable, temporarily using microWakeWord: %s"
         args: [ 'message.c_str()' ]
     - script.execute: recover_openwakeword_after_fallback
@@ -288,7 +288,7 @@ voice_assistant:
   on_client_connected:
     - logger.log:
         level: INFO
-        tag: tater.voice
+        tag: voice
         format: "Voice assistant client connected; starting wake word detection."
     - lambda: |-
         id(init_in_progress) = false;
@@ -311,7 +311,7 @@ voice_assistant:
   on_client_disconnected:
     - logger.log:
         level: WARN
-        tag: tater.voice
+        tag: voice
         format: "Voice assistant client disconnected; stopping wake word detection."
     - voice_assistant.stop:
     - remote_wake_word.stop:
@@ -521,7 +521,7 @@ script:
                       }
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Using remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).state == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - remote_wake_word.start:
@@ -578,7 +578,7 @@ script:
                 then:
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Retrying remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).state == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - script.execute: apply_wake_engine

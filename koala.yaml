@@ -1,8 +1,8 @@
 substitutions:
   # DEVICE IDENTITY
   firmware_version: "3.0.3"
-  device_name: tater-koala
-  friendly_name: Tater Koala
+  device_name: koala
+  friendly_name: Koala
 
   # WIFI / NETWORK
   wifi_ssid: !secret wifi_ssid
@@ -12,12 +12,12 @@ substitutions:
 
   # WAKE WORD CONFIG
   wake_engine: microwakeword
-  openwakeword_server_url: ws://tater.local:8501
-  nanowakeword_server_url: ws://tater.local:8501
+  openwakeword_server_url: ws://wakeword.local:8501
+  nanowakeword_server_url: ws://wakeword.local:8501
   openwakeword_http_timeout_ms: "3000"
   openwakeword_max_failures: "3"
-  wake_word_name: hey_tater
-  wake_word_model_url: https://raw.githubusercontent.com/TaterTotterson/microWakeWords/refs/heads/main/microWakeWords/hey_tater.json
+  wake_word_name: computer
+  wake_word_model_url: https://raw.githubusercontent.com/Gabriel-Lewis/microWakeWords/refs/heads/main/microWakeWords/computer.json
   wake_model_stop_url: https://github.com/kahrendt/microWakeWord/releases/download/stop/stop.json
 
   # WAKE WORD SENSITIVITY
@@ -29,7 +29,6 @@ substitutions:
   mute_switch_on_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_on.flac
   mute_switch_off_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_off.flac
   timer_finished_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/timer_finished.flac
-  wake_word_triggered_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/wake_word_triggered.flac
   center_button_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_press.flac
   center_button_double_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_double_press.flac
   center_button_triple_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_triple_press.flac
@@ -45,12 +44,12 @@ esphome:
   name_add_mac_suffix: true
 
 dashboard_import:
-  package_import_url: github://TaterTotterson/microWakeWords/koala-TaterTimer.yaml@main
+  package_import_url: github://Gabriel-Lewis/microWakeWords/koala.yaml@main
   import_full_config: true
 
 packages:
-  TaterTotterson.Koala:
-    url: https://github.com/TaterTotterson/microWakeWords
+  microVoiceKit.Koala:
+    url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:
       - koala/voice_assistant_phase_ids.yaml

@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "schnoortseepoops",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "schnoortseepoops.tflite",
   "trained_languages": [
     "en"

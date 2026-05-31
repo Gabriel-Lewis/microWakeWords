@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "edgar",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "edgar.tflite",
   "trained_languages": [
     "en"

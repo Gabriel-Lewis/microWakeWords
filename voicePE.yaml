@@ -1,8 +1,8 @@
 substitutions:
   # DEVICE IDENTITY
   firmware_version: "3.0.3"
-  device_name: tatervpe
-  friendly_name: TaterVPE
+  device_name: voicepe
+  friendly_name: Voice PE
 
   # WIFI / NETWORK
   wifi_ssid: !secret wifi_ssid
@@ -11,12 +11,12 @@ substitutions:
 
   # WAKE WORD CONFIG
   wake_engine: microwakeword
-  openwakeword_server_url: ws://tater.local:8501
-  nanowakeword_server_url: ws://tater.local:8501
+  openwakeword_server_url: ws://wakeword.local:8501
+  nanowakeword_server_url: ws://wakeword.local:8501
   openwakeword_http_timeout_ms: "3000"
   openwakeword_max_failures: "3"
-  wake_word_name: hey_tater
-  wake_word_model_url: https://raw.githubusercontent.com/TaterTotterson/microWakeWords/refs/heads/main/microWakeWords/hey_tater.json
+  wake_word_name: computer
+  wake_word_model_url: https://raw.githubusercontent.com/Gabriel-Lewis/microWakeWords/refs/heads/main/microWakeWords/computer.json
 
   # WAKE WORD SENSITIVITY (probability cutoff)
   wake_cutoff_slight: "250"     # ~0.98
@@ -30,7 +30,6 @@ substitutions:
   mute_switch_on_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_on.flac
   mute_switch_off_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_off.flac
   timer_finished_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/timer_finished.flac
-  wake_word_triggered_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/wake_word_triggered.flac
   center_button_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_press.flac
   center_button_double_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_double_press.flac
   center_button_triple_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_triple_press.flac
@@ -43,8 +42,8 @@ substitutions:
   error_cloud_expired_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/error_cloud_expired.mp3
 
 packages:
-  TaterTotterson.VoicePE:
-    url: https://github.com/TaterTotterson/microWakeWords
+  microVoiceKit.VoicePE:
+    url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:
       - voicepe/device.yaml

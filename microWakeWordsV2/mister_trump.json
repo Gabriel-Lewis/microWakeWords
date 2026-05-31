@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "mister_trump",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "mister_trump.tflite",
   "trained_languages": [
     "en"

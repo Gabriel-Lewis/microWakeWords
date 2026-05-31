@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "wonder_killer",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "wonder_killer.tflite",
   "trained_languages": [
     "en"

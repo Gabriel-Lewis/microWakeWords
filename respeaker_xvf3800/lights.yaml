@@ -20,15 +20,15 @@ select:
     optimistic: true
     options:
       - "Custom"
-      - "Tater"
+      - "Default"
       - "Blue"
       - "Green"
       - "Red"
       - "White"
-    initial_option: "Tater"
+    initial_option: "Default"
     set_action:
       - lambda: |-
-          if (x == "Tater") {
+          if (x == "Default") {
             id(user_led_ring_color_r) = 255.0f;
             id(user_led_ring_color_g) = 120.0f;
             id(user_led_ring_color_b) = 0.0f;

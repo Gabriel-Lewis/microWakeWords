@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "phantom_hey_phantom_ghost_hey_ghost",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "phantom_hey_phantom_ghost_hey_ghost.tflite",
   "trained_languages": [
     "en"

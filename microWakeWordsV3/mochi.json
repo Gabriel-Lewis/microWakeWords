@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "mochi",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "mochi.tflite",
   "trained_languages": [
     "en"

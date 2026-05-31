@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "lumia",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "lumia.tflite",
   "trained_languages": [
     "en"

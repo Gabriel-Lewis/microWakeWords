@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "eyezick",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "eyezick.tflite",
   "trained_languages": [
     "en"

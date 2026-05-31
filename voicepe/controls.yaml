@@ -214,7 +214,7 @@ binary_sensor:
                     id: button_press_event
                     event_type: "triple_press"
       # Long Press
-      #  . Push-to-intercom broadcast: hold to open the mic, release to send to all connected Tater sats.
+      #  . Push-to-intercom broadcast: hold to open the mic, release to send to all connected voice satellites.
       - timing:
           - ON for at least 1s
         then:
@@ -259,7 +259,7 @@ binary_sensor:
                     then:
                       - lambda: id(va).set_use_wake_word(false);
                       - voice_assistant.start:
-                          wake_word: "Tater intercom broadcast"
+                          wake_word: "Intercom broadcast"
                           silence_detection: false
                       - event.trigger:
                           id: button_press_event

@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "cassiope_french",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "cassiope_french.tflite",
   "trained_languages": [
     "en"

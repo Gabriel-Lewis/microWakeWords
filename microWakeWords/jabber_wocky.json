@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "jabber_wocky",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "jabber_wocky.tflite",
   "trained_languages": [
     "en"

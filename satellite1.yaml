@@ -2,10 +2,10 @@ substitutions:
   # -----------------------------
   # DEVICE IDENTITY
   # -----------------------------
-  friendly_name: "Tater_Sat1"
-  node_name: tatersat1
-  company_name: Tater
-  project_name: Tater_Sat1
+  friendly_name: "Satellite1"
+  node_name: satellite1
+  company_name: Voice
+  project_name: Satellite1
   component_name: Core
 
   # -----------------------------
@@ -32,12 +32,12 @@ substitutions:
   # WAKE WORD CONFIG
   # -----------------------------
   wake_engine: microwakeword
-  openwakeword_server_url: ws://tater.local:8501
-  nanowakeword_server_url: ws://tater.local:8501
+  openwakeword_server_url: ws://wakeword.local:8501
+  nanowakeword_server_url: ws://wakeword.local:8501
   openwakeword_http_timeout_ms: "3000"
   openwakeword_max_failures: "3"
-  wake_word_name: hey_tater
-  wake_word_model_url: https://raw.githubusercontent.com/TaterTotterson/microWakeWords/refs/heads/main/microWakeWords/hey_tater.json
+  wake_word_name: computer
+  wake_word_model_url: https://raw.githubusercontent.com/Gabriel-Lewis/microWakeWords/refs/heads/main/microWakeWords/computer.json
   wake_model_stop_url: https://github.com/kahrendt/microWakeWord/releases/download/stop/stop.json
 
   # -----------------------------
@@ -59,7 +59,6 @@ substitutions:
   mute_switch_on_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_on.flac
   mute_switch_off_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_off.flac
   timer_finished_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/timer_finished.flac
-  wake_word_triggered_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/wake_word_triggered.flac
   jack_connected_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/jack_connected.flac
   jack_disconnected_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/jack_disconnected.flac
 
@@ -220,13 +219,13 @@ logger:
     sensor: WARN  # avoids logging frequent sensor updates
 
 dashboard_import:
-  package_import_url: github://TaterTotterson/microWakeWords/satellite1-TaterTimer.yaml@main
+  package_import_url: github://Gabriel-Lewis/microWakeWords/satellite1.yaml@main
   import_full_config: true
 
 external_components:
   - source:
       type: git
-      url: https://github.com/TaterTotterson/microWakeWords
+      url: https://github.com/Gabriel-Lewis/microWakeWords
       ref: main
       path: sat1/components
     components:
@@ -240,8 +239,8 @@ external_components:
     refresh: 0s
 
 packages:
-  TaterTotterson.Sat1:
-    url: https://github.com/TaterTotterson/microWakeWords
+  microVoiceKit.Sat1:
+    url: https://github.com/Gabriel-Lewis/microWakeWords
     ref: main
     files:
       - sat1/dashboard_build.yaml

@@ -5,7 +5,7 @@ from esphome.components import esp32, microphone
 import esphome.config_validation as cv
 from esphome.const import CONF_ID, CONF_MICROPHONE, CONF_TRIGGER_ID, CONF_URL
 
-CODEOWNERS = ["@TaterTotterson"]
+CODEOWNERS = ["@Gabriel-Lewis"]
 DEPENDENCIES = ["microphone", "network"]
 
 DOMAIN = "remote_wake_word"

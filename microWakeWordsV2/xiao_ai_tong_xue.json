@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "xiao_ai_tong_xue",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "xiao_ai_tong_xue.tflite",
   "trained_languages": [
     "en"

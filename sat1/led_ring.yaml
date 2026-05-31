@@ -682,7 +682,7 @@ script:
           effect: "Listening For Command"
 
   # Script executed while the action button is held for push-to-intercom.
-  # Tater orange listening animation so it reads differently from a normal touch.
+  # Primary orange listening animation so it reads differently from a normal touch.
   - id: control_leds_push_to_intercom_phase
     then:
       - light.turn_on:

@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "avena",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "avena.tflite",
   "trained_languages": [
     "en"

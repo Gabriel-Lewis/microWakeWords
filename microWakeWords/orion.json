@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "orion",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "orion.tflite",
   "trained_languages": [
     "en"

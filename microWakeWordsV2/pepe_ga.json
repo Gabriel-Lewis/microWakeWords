@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "pepe_ga",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "pepe_ga.tflite",
   "trained_languages": [
     "en"

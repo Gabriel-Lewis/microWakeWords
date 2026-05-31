@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "maayestro",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "maayestro.tflite",
   "trained_languages": [
     "en"

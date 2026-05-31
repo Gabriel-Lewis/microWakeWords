@@ -37,7 +37,7 @@ script:
                       }
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Using remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).current_option() == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - remote_wake_word.start:
@@ -95,7 +95,7 @@ script:
                 then:
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Retrying remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).current_option() == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - script.execute: apply_wake_engine
@@ -244,7 +244,7 @@ script:
           id: voice_assistant_leds
           effect: "Thinking"
 
-  # Script executed when Tater is running a tool call.
+  # Script executed when voice assistant is running a tool call.
   - id: control_leds_voice_assistant_tool_call_phase
     then:
       - light.turn_on:

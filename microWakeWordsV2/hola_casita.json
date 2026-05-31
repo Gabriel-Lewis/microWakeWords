@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hola_casita",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "hola_casita.tflite",
   "trained_languages": [
     "en"

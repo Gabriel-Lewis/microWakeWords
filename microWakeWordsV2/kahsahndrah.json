@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "kahsahndrah",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "kahsahndrah.tflite",
   "trained_languages": [
     "en"

@@ -4,7 +4,7 @@ esphome:
   name_add_mac_suffix: true
   min_version: 2026.4.0
   project:
-    name: tater.voicepe
+    name: microVoiceKit.voicepe
     version: ${firmware_version}
   on_boot:
     priority: 375

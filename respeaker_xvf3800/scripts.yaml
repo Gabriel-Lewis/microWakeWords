@@ -37,7 +37,7 @@ script:
                       }
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Using remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).current_option() == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - remote_wake_word.start:
@@ -95,7 +95,7 @@ script:
                 then:
                   - logger.log:
                       level: INFO
-                      tag: tater.voice
+                      tag: voice
                       format: "Retrying remote wake endpoint (%s)."
                       args: [ '(id(wake_engine_select).current_option() == "nanowakeword" ? id(nanowakeword_server_url).state : id(openwakeword_server_url).state).c_str()' ]
                   - script.execute: apply_wake_engine
@@ -142,7 +142,7 @@ script:
                 then:
                   - lambda: id(va).set_use_wake_word(false);
                   - voice_assistant.start:
-                      wake_word: "Tater intercom broadcast"
+                      wake_word: "Intercom broadcast"
                       silence_detection: false
                   - event.trigger:
                       id: button_press_event
@@ -858,7 +858,7 @@ script:
           brightness: 0.0
 
 
-  # Script executed while Tater is running a tool call.
+  # Script executed while voice assistant is running a tool call.
   - id: control_leds_voice_assistant_tool_call_phase
     then:
       - script.execute:

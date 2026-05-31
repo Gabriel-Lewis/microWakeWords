@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "hey_dark_derp",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "hey_dark_derp.tflite",
   "trained_languages": [
     "en"

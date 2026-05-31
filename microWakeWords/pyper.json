@@ -1,8 +1,6 @@
 {
   "type": "micro",
   "wake_word": "pyper",
-  "author": "Tater Totterson",
-  "website": "https://github.com/TaterTotterson/microWakeWord-Trainer-AppleSilicon",
   "model": "pyper.tflite",
   "trained_languages": [
     "en"
