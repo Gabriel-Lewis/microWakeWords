@@ -3,41 +3,59 @@ voice_kit:
   i2c_id: internal_i2c
   reset_pin: GPIO4
   firmware:
-    url: https://github.com/esphome/voice-kit-xmos-firmware/releases/download/v1.3.1/ffva_v1.3.1_upgrade.bin
-    version: "1.3.1"
-    md5: 964635c5bf125529dab14a2472a15401
+    url: https://raw.githubusercontent.com/TaterTotterson/microWakeWords/main/voicepe/firmware/xmos/ffva_v1.3.2-vod_upgrade.bin
+    version: "1.3.2"
+    md5: 12b6287a9a5b12261e9266ea348e0d90
+    on_begin:
+      then:
+        - lambda: |-
+            id(xmos_flashing_state) = 1;
+            id(global_led_animation_index) = 0;
+        - script.execute: control_leds
+    on_progress:
+      then:
+        - lambda: |-
+            int progress_led = (int) (x * 12.0f / 100.0f);
+            if (progress_led < 0) {
+              progress_led = 0;
+            } else if (progress_led > 11) {
+              progress_led = 11;
+            }
+            id(global_led_animation_index) = progress_led;
+        - script.execute: control_leds
+    on_end:
+      then:
+        - lambda: id(xmos_flashing_state) = 2;
+        - script.execute: control_leds
+        - lambda: id(xmos_flashing_state) = 0;
+    on_error:
+      then:
+        - lambda: id(xmos_flashing_state) = 3;
+        - script.execute: control_leds
+        - lambda: id(xmos_flashing_state) = 0;
 
-# Sendspin related components are pinned to specific commits for reproducible builds
 external_components:
   - source:
       type: git
-      url: https://github.com/Gabriel-Lewis/microWakeWords
+      url: https://github.com/TaterTotterson/microWakeWords
       ref: main
+      path: voicepe/components
     components:
+      - i2s_audio
+      - voicepe_doa
+    refresh: 1h
+  - source:
+      type: git
+      url: https://github.com/TaterTotterson/microWakeWords
+      ref: main
+      path: shared/components
+    components:
+      - http_request
       - voice_assistant
       - micro_wake_word
       - remote_wake_word
-    refresh: 0s
-  - source:
-      type: git
-      url: https://github.com/esphome/home-assistant-voice-pe
-      ref: dev
-    components:
       - voice_kit
-    refresh: 0s
-  - source:
-      # https://github.com/esphome/esphome/pull/14933
-      type: git
-      url: https://github.com/kahrendt/esphome
-      ref: 7a6cf5c8472b7e2fa18ee0fc314f66a80d249e32
-    components: [const, media_source, sendspin]
-  - source:
-      # https://github.com/esphome/esphome/pull/12429
-      type: git
-      url: https://github.com/esphome/esphome
-      ref: ff8ce89556748509d7ee8724e12d9d43d3c8c1e8
-    refresh: 0s
-    components: [http_request]
+    refresh: 1h
 
 audio_dac:
   - platform: aic3204
@@ -90,7 +108,7 @@ micro_wake_word:
                           # Start the voice assistant and play the wake sound, if enabled
                           else:
                             - lambda: |-
-                                id(openwakeword_wake_detected) = false;
+                                id(openwakeword_wake_detected) = true;
                                 id(voice_assistant_phase) = 2;
                             - script.execute: control_leds
                             - if:
@@ -98,9 +116,8 @@ micro_wake_word:
                                   switch.is_on: wake_sound
                                 then:
                                   - script.execute:
-                                      id: play_sound
+                                      id: play_wake_sound
                                       priority: false
-                                      sound_file: "wake_word_triggered_sound"
                             - voice_assistant.start:
                                 wake_word: !lambda return wake_word;
 
@@ -156,9 +173,8 @@ remote_wake_word:
                             switch.is_on: wake_sound
                           then:
                             - script.execute:
-                                id: play_sound
+                                id: play_wake_sound
                                 priority: false
-                                sound_file: "wake_word_triggered_sound"
                       - voice_assistant.start:
                           wake_word: !lambda return wake_word;
   on_error:
@@ -207,6 +223,19 @@ text:
     max_length: 255
     set_action:
       - lambda: id(mww).set_capture_upload_url(x);
+
+  - platform: template
+    id: microwakeword_model_url
+    name: microWakeWord Model URL
+    icon: "mdi:file-cloud"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: "${wake_word_model_url}"
+    mode: TEXT
+    max_length: 255
+    set_action:
+      - lambda: id(mww).set_runtime_model_url(x);
 
   - platform: template
     id: openwakeword_server_url
@@ -417,9 +446,8 @@ voice_assistant:
                   - switch.is_on: wake_sound
               then:
                 - script.execute:
-                    id: play_sound
+                    id: play_wake_sound
                     priority: false
-                    sound_file: "wake_word_triggered_sound"
   # When the voice assistant starts: Play a wake up sound, duck audio.
   on_start:
     - remote_wake_word.stop:

@@ -4,7 +4,7 @@ globals:
     type: int
     restore_value: no
     initial_value: '10'
-  # True after the remote wake detector has fired for this turn.
+  # True after the server-side openWakeWord detector has fired for this turn.
   - id: openwakeword_wake_detected
     type: bool
     restore_value: no
@@ -13,13 +13,14 @@ globals:
 external_components:
   - source:
       type: git
-      url: https://github.com/Gabriel-Lewis/microWakeWords
+      url: https://github.com/TaterTotterson/microWakeWords
       ref: main
+      path: shared/components
     components:
       - voice_assistant
       - micro_wake_word
       - remote_wake_word
-    refresh: 0s
+    refresh: 1h
 
 microphone:
   - platform: satellite1
@@ -81,7 +82,7 @@ micro_wake_word:
                           # Start the voice assistant and play the wake sound, if enabled
                           else:
                             - lambda: |-
-                                id(openwakeword_wake_detected) = false;
+                                id(openwakeword_wake_detected) = true;
                                 id(voice_assistant_phase) = 2;
                             - script.execute: control_leds
                             - if:
@@ -89,9 +90,8 @@ micro_wake_word:
                                   switch.is_on: wake_sound
                                 then:
                                   - script.execute:
-                                      id: play_sound
+                                      id: play_wake_sound
                                       priority: false
-                                      sound_file: !lambda return id(wake_word_triggered_sound);
                             - voice_assistant.start:
                                 wake_word: !lambda return wake_word;
 
@@ -145,9 +145,8 @@ remote_wake_word:
                             switch.is_on: wake_sound
                           then:
                             - script.execute:
-                                id: play_sound
+                                id: play_wake_sound
                                 priority: false
-                                sound_file: !lambda return id(wake_word_triggered_sound);
                       - voice_assistant.start:
                           wake_word: !lambda return wake_word;
   on_error:
@@ -196,6 +195,19 @@ text:
     max_length: 255
     set_action:
       - lambda: id(mww).set_capture_upload_url(x);
+
+  - platform: template
+    id: microwakeword_model_url
+    name: microWakeWord Model URL
+    icon: "mdi:file-cloud"
+    entity_category: config
+    optimistic: true
+    restore_value: true
+    initial_value: "${wake_word_model_url}"
+    mode: TEXT
+    max_length: 255
+    set_action:
+      - lambda: id(mww).set_runtime_model_url(x);
 
   - platform: template
     id: openwakeword_server_url
@@ -369,9 +381,8 @@ voice_assistant:
                   - switch.is_on: wake_sound
               then:
                 - script.execute:
-                    id: play_sound
+                    id: play_wake_sound
                     priority: false
-                    sound_file: !lambda return id(wake_word_triggered_sound);
 
   # When the voice assistant starts: Play a wake up sound, duck audio.
   on_start:
@@ -488,7 +499,12 @@ script:
     then:
       - if:
           condition:
-            lambda: return !id(init_in_progress) && !id(push_to_intercom_active);
+            and:
+              - lambda: return !id(init_in_progress) && !id(push_to_intercom_active);
+              - not:
+                  voice_assistant.is_running:
+              - not:
+                  media_player.is_announcing:
           then:
             - if:
                 condition:
@@ -551,6 +567,13 @@ script:
   - id: recover_openwakeword_after_fallback
     mode: restart
     then:
+      - wait_until:
+          condition:
+            and:
+              - not:
+                  voice_assistant.is_running:
+              - not:
+                  media_player.is_announcing:
       - lambda: |-
           id(openwakeword_wake_detected) = false;
           id(voice_assistant_phase) = 1;
@@ -574,7 +597,12 @@ script:
             - delay: 60s
             - if:
                 condition:
-                  lambda: return id(wake_engine_select).state != "microwakeword" && !id(push_to_intercom_active);
+                  and:
+                    - lambda: return id(wake_engine_select).state != "microwakeword" && !id(push_to_intercom_active);
+                    - not:
+                        voice_assistant.is_running:
+                    - not:
+                        media_player.is_announcing:
                 then:
                   - logger.log:
                       level: INFO

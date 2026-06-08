@@ -4,6 +4,11 @@ globals:
     type: int
     restore_value: no
     initial_value: '0'
+  # Global variable tracking if the XMOS firmware is being flashed.
+  - id: xmos_flashing_state
+    type: int
+    restore_value: no
+    initial_value: '0'
   # Global initialization variable. Initialized to true and set to false once everything is connected. Only used to have a smooth "plugging" experience
   - id: init_in_progress
     type: bool
@@ -19,7 +24,7 @@ globals:
     type: int
     restore_value: no
     initial_value: '10'
-  # True after the remote wake detector has fired for this turn.
+  # True after the server-side openWakeWord detector has fired for this turn.
   - id: openwakeword_wake_detected
     type: bool
     restore_value: no
@@ -31,11 +36,6 @@ globals:
     initial_value: 'false'
   # Global variable tracking if the LED color was recently changed.
   - id: color_changed
-    type: bool
-    restore_value: no
-    initial_value: 'false'
-  # Global variable tracking if the group media player volume was recent changed.
-  - id: group_volume_changed
     type: bool
     restore_value: no
     initial_value: 'false'

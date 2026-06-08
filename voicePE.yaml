@@ -1,6 +1,6 @@
 substitutions:
   # DEVICE IDENTITY
-  firmware_version: "3.0.3"
+  firmware_version: "3.0.6"
   device_name: voicepe
   friendly_name: Voice PE
 
@@ -59,6 +59,7 @@ packages:
       - voicepe/scripts.yaml
       - voicepe/audio.yaml
       - voicepe/voice.yaml
+      - voicepe/doa.yaml
       - voicepe/buttons.yaml
 
 globals:
