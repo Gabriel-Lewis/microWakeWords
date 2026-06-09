@@ -52,6 +52,7 @@ class I2SAudioSpeaker : public I2SAudioOut, public speaker::Speaker, public Comp
   /// Q15 fixed-point factor.
   /// @param volume between 0.0 and 1.0
   void set_volume(float volume) override;
+  float audio_level() const { return this->audio_level_; }
 
   /// @brief Mutes or unmute the speaker. Uses the speaker's configured audio dac component. If unavailble, it is
   /// implemented as a software volume control. Overrides the default setter to convert the floating point volume to a
@@ -130,12 +131,14 @@ class I2SAudioSpeaker : public I2SAudioOut, public speaker::Speaker, public Comp
   bool has_pending_volume_{false};
   bool has_pending_mute_{false};
 
-  // Playout time tracking for sendspin synchronization
+  // Playout time tracking for synchronized playback
   int64_t last_dma_write_{0};
   QueueHandle_t i2s_sent_time_queue_{nullptr};
 
   // Stream info tracking for dynamic reconfiguration
   audio::AudioStreamInfo current_stream_info_;
+
+  volatile float audio_level_{0.0f};
 };
 
 }  // namespace i2s_audio
