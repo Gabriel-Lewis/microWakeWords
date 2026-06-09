@@ -226,7 +226,7 @@ dashboard_import:
 external_components:
   - source:
       type: git
-      url: https://github.com/TaterTotterson/microWakeWords
+      url: https://github.com/Gabriel-Lewis/microWakeWords
       ref: main
       path: sat1/components
     components:
@@ -304,7 +304,7 @@ memory_flasher:
     auto_flash: true
     embed_flash_image:
       image_version: ${xmos_fw_version}
-      image_file: https://raw.githubusercontent.com/TaterTotterson/microWakeWords/main/sat1/firmware/xmos/satellite1_firmware_fixed_delay-v1.0.4-dev.9.factory.bin
+      image_file: https://raw.githubusercontent.com/Gabriel-Lewis/microWakeWords/main/sat1/firmware/xmos/satellite1_firmware_fixed_delay-v1.0.4-dev.9.factory.bin
       md5: 25babfee1e1eb1252e4855a00a5e2ed9
 
     on_flashing_start:
